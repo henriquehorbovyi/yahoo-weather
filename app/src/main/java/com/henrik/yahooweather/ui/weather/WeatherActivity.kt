@@ -1,8 +1,9 @@
 
-package com.henrik.yahooweather
+package com.henrik.yahooweather.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.henrik.yahooweather.R
 
 class MainActivity : AppCompatActivity() {
 
