@@ -15,7 +15,6 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.net.Uri
 import android.provider.Settings
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.henrik.yahooweather.data.network.OpenWeatherApiService
@@ -111,6 +110,7 @@ class SplashActivity : ScopedActivity(){
     }
 
     private fun showSearchLocationAnimation(){
-        animation_view.visibility = View.VISIBLE
+        animation_search_location.visibility = View.VISIBLE
+        loading.visibility = View.VISIBLE
     }
 }
