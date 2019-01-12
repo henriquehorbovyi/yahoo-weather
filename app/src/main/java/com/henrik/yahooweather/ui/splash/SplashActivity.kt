@@ -15,6 +15,7 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.net.Uri
 import android.provider.Settings
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import com.henrik.yahooweather.data.network.OpenWeatherApiService
@@ -93,7 +94,7 @@ class SplashActivity : ScopedActivity(){
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         val hasGPS = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         if(hasGPS){
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0f, object : LocationListener{
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0f, object : LocationListener{
                 override fun onLocationChanged(location: Location?) {
                     location?.let { gpsLocation = it }
                 }
