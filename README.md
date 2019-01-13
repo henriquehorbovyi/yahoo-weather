@@ -37,7 +37,7 @@ The setup you need on your machine to run this project is:
 
 ### Step 1
 - :fork_and_knife: Fork this repository!
--  Clone the forked repository from your account on your machine
+- :dancers: Clone the forked repository from your account on your machine
 ### Step 2
 
 - **HACK AWAY!** :hammer:
