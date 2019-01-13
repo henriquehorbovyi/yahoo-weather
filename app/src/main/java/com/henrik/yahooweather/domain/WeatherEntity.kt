@@ -13,4 +13,10 @@ data class WeatherEntity(
     val weather: List<Weather>,
     val coord: Coord,
     val sys: Sys?
-) : Parcelable
+) : Parcelable {
+
+    override fun toString(): String {
+        return "About ${main.temp.toInt()}° C in $city, ${sys?.country} (${weather[0].description.capitalize()})"
+    }
+
+}
