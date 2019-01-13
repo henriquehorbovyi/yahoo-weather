@@ -13,7 +13,7 @@ import retrofit2.http.Query
 interface OpenWeatherApiService {
 
     @GET("weather")
-    fun getCurrentWeatherByCoordenates(
+    fun getCurrentWeatherByCoordinates(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double,
         @Query("units") units: String = "metric"): Deferred<WeatherEntity>
@@ -23,7 +23,7 @@ interface OpenWeatherApiService {
         private const val API_KEY_VALUE = "65801d4a7291947056c5981048be9f63"
         private const val API_KEY_PARAMETER_NAME = "APPID"
 
-        operator fun invoke() : OpenWeatherApiService{
+        operator fun invoke(connectivityInterceptor: ConnectivityInterceptor) : OpenWeatherApiService{
 
             val apiKeyInterceptor = Interceptor{chain ->
                 val alteredUrl = chain.request()
@@ -39,6 +39,7 @@ interface OpenWeatherApiService {
             }
 
             val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(connectivityInterceptor)
                 .addInterceptor(apiKeyInterceptor)
                 .build()
             return Retrofit.Builder()
